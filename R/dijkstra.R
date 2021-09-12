@@ -17,7 +17,7 @@ dijkstra <- function(graph, init_node){
   #' @param v1 A Vector of integers for the start positions
   #' @param v2 A Vector of integers for the stop positions
   #' @param w A Vector of distances between the corresponding vertexes in vector v1 and v2
-  #' @param int_node_with_minimum_distance_position_in_v_answer Node with minimum distance position in v_answer
+  #' @param v_excluded_nodes A vector of excluded vertexes
   #'
   #' @return The vector of shortest distances between the initialized node and every other node
   #' @examples
@@ -26,13 +26,16 @@ dijkstra <- function(graph, init_node){
   #' @source \url{https://en.wikipedia.org/wiki/Dijkstra\%27s_algorithm/}
 
   #https://stackoverflow.com/questions/68971969/roxygen2-return-mismatched-braces-or-quotes
+  
   if(!is.data.frame(graph)){stop()}
   if(!identical(names(graph), c("v1", "v2", "w"))){stop()}
 
   v_v1 <- unlist(graph$v1)
   v_v2 <- unlist(graph$v2)
   v_w <- unlist(graph$w)
+  
   int_max_node <- max(v_v1)
+  
   if(int_max_node < init_node){stop()}
 
   v_answer <- 1:int_max_node + Inf # The vector that holds distances
@@ -40,33 +43,47 @@ dijkstra <- function(graph, init_node){
   v_answer[init_node] <- 0
 
   int_updated_node <- init_node
+  
+  v_excluded_nodes <- c(init_node)
 
   while ((Inf %in% v_answer)) {
 
     #Update the information about the connected nodes.
     v_connected_vortex_positions <- which(v_v1 == int_updated_node)
-
+    #print("v_connected_vortex_positions:")
+    #print(v_connected_vortex_positions)
+    
     #Update the distances in v_answer
     for (int_position in v_connected_vortex_positions) {
       if(v_answer[v_v2[int_position]] > v_w[int_position] + v_answer[int_updated_node] ){v_answer[v_v2[int_position]] <- v_w[int_position] + v_answer[int_updated_node]}
     }
-
+    #print("v_answer:")
+    #print(v_answer)
+    
     #exclude all elements, where connected to int_updated_node
     v_v1 <- v_v1[-which(v_v2 == int_updated_node)]
     v_w <- v_w[-which(v_v2 == int_updated_node)]
     v_v2 <- v_v2[-which(v_v2 == int_updated_node)]
-
+    v_excluded_nodes <- c(v_excluded_nodes, int_updated_node)
+    #print("updated graph:")
+    #print(v_v1)
+    #print(v_v2)
+    #print(v_w)
+    
     #update the vector of connected positions based on the new vectors v_v1, v_v2, and v_w
     v_connected_vortex_positions <- which(v_v1 == int_updated_node)
-
+    #print("v_connected_vortex_positions:")
+    #print(v_connected_vortex_positions)
+    
+    
     #find the minimum distance and find the next node based on the minimum distance
-    int_min_distance <- min(v_answer[v_v2[v_connected_vortex_positions]])
+    int_min_distance <- min(v_answer[-v_excluded_nodes])
     #print("int_min_distance:")
     #print(int_min_distance)
-    #print("which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance:")
-    #print(which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance)) 
-    int_node_with_minimum_distance_position_in_v_answer <- which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance)
-    int_updated_node <- v_v2[v_connected_vortex_positions[int_node_with_minimum_distance_position_in_v_answer]]
+    #print(which(v_answer == int_min_distance)[1])
+    int_updated_node <- which(v_answer == int_min_distance)
+    #print("int_updated_node:")
+    #print(int_updated_node)
   }
   return(v_answer)
 }
