@@ -13,6 +13,10 @@ dijkstra <- function(graph, init_node){
   #' @param v_connected_vortex_positions A vector of all connected positions to the current node
   #' @param int_position An integer rutting over v_connected_vortex_positions
   #' @param int_min_distance The shortest path to the nest vertex
+  #' @param graph A function argument. A data.frame
+  #' @param v1 A Vector of integers for the start positions
+  #' @param v2 A Vector of integers for the stop positions
+  #' @param w A Vector of distances between the corresponding vertexes in vector v1 and v2
   #'
   #' @return The vector of shortest distances between the initialized node and every other node
   #' @examples

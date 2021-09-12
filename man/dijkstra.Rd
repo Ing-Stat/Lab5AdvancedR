@@ -10,6 +10,8 @@
 dijkstra(graph, init_node)
 }
 \arguments{
+\item{graph}{A function argument. A data.frame}
+
 \item{init_node}{The initialized vertex from which distances should be computed}
 
 \item{v_v1}{A Vector of integers for the start positions}
@@ -29,6 +31,12 @@ dijkstra(graph, init_node)
 \item{int_position}{An integer rutting over v_connected_vortex_positions}
 
 \item{int_min_distance}{The shortest path to the nest vertex}
+
+\item{v1}{A Vector of integers for the start positions}
+
+\item{v2}{A Vector of integers for the stop positions}
+
+\item{w}{A Vector of distances between the corresponding vertexes in vector v1 and v2}
 }
 \value{
 The vector of shortest distances between the initialized node and every other node

@@ -7,7 +7,7 @@ Authors@R: c(
     person("Kristina", "Levina", email = "myemail@gmail.com", role = "cre"),
     person("Ingemar", "Sjostrom", email = "myemail@gmail.com", role = "aut"))
 Description: This package realises two algorithms: Euclidean and Dijkstra, in two functions: euclidean and dijkstra, respectively.
-License: GPL-2
+License: file LICENSE
 RoxygenNote: 7.1.1
 Suggests: testthat
 Encoding: UTF-8
