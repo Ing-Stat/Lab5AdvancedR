@@ -3,7 +3,7 @@
 
 euclidean <- function(a, b) {
   #' Calculates the GCD for two integers
-  #'
+  #' @export
   #' @param a A first integer
   #' @param b A second integer
   #' @return The GCD

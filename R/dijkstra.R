@@ -2,6 +2,7 @@ dijkstra <- function(graph, init_node){
 
   #' Calculates the shortest distances between an initial node and all other nodes in an input data.frame
   #'
+  #' @export
   #' @param v_v1 A Vector of integers for the start positions
   #' @param v_v2 A Vector of integers for the stop positions
   #' @param v_w A Vector of distances between the corresponding vertexes in vector v_v1 and v_v2
