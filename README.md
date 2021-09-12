@@ -1,2 +1,2 @@
 # Lab3AdvancedR
-Realisation of Dijkstra and Euclidean algorithms in a package.
+Realisation of the Dijkstra and Euclidean algorithms in a package.
