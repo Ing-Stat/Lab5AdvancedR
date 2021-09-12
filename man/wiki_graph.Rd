@@ -2,7 +2,7 @@
 \alias{wiki_graph}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+Graph from Wikipedia page about the Dijkstra algorithm https://en.wikipedia.org/wiki/Dijkstra\%27s_algorithm
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
