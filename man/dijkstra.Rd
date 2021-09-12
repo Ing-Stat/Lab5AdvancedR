@@ -37,6 +37,8 @@ dijkstra(graph, init_node)
 \item{v2}{A Vector of integers for the stop positions}
 
 \item{w}{A Vector of distances between the corresponding vertexes in vector v1 and v2}
+
+\item{int_node_with_minimum_distance_position_in_v_answer}{Node with minimum distance position in v_answer}
 }
 \value{
 The vector of shortest distances between the initialized node and every other node

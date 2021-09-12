@@ -8,6 +8,6 @@ Authors@R: c(
     person("Ingemar", "Sjostrom", email = "myemail@gmail.com", role = "aut"))
 Description: This package realises two algorithms: Euclidean and Dijkstra, in two functions: euclidean and dijkstra, respectively.
 License: file LICENSE
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: testthat
 Encoding: UTF-8

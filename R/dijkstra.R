@@ -17,6 +17,7 @@ dijkstra <- function(graph, init_node){
   #' @param v1 A Vector of integers for the start positions
   #' @param v2 A Vector of integers for the stop positions
   #' @param w A Vector of distances between the corresponding vertexes in vector v1 and v2
+  #' @param int_node_with_minimum_distance_position_in_v_answer Node with minimum distance position in v_answer
   #'
   #' @return The vector of shortest distances between the initialized node and every other node
   #' @examples
@@ -58,11 +59,14 @@ dijkstra <- function(graph, init_node){
     #update the vector of connected positions based on the new vectors v_v1, v_v2, and v_w
     v_connected_vortex_positions <- which(v_v1 == int_updated_node)
 
-    #find the minimum distance
+    #find the minimum distance and find the next node based on the minimum distance
     int_min_distance <- min(v_answer[v_v2[v_connected_vortex_positions]])
-
-    #find the next node based on the minimum distance
-    int_updated_node <- which(v_answer == int_min_distance)
+    #print("int_min_distance:")
+    #print(int_min_distance)
+    #print("which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance:")
+    #print(which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance)) 
+    int_node_with_minimum_distance_position_in_v_answer <- which(v_answer[v_v2[v_connected_vortex_positions]] == int_min_distance)
+    int_updated_node <- v_v2[v_connected_vortex_positions[int_node_with_minimum_distance_position_in_v_answer]]
   }
   return(v_answer)
 }
