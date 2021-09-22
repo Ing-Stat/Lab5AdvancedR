@@ -25,19 +25,22 @@ getWeather <- function(){
   
   #Convert from raw unicode to .json to a list
   data <- jsonlite::fromJSON(rawToChar(request$content))
-  location <- data$geometry
+  location <- c("longitude" = 16, "latitude" = 58)
   
-  print("The chosen location:")
-  print(location)
+  #print("The chosen location:")
+  #print(location)
   
   #Create a data.frame for analysis. 24 entries (time steps: 00:00-23.00)
   parameters <- data$timeSeries$parameters
   
-  print("Obtained parameters:")
-  print(parameters)
+  #print("Obtained parameters:")
+  #print(parameters)
   
   currentDate = Sys.Date()
+  
+  retur <- list("date" = currentDate, "parameters" = parameters, "location" = location)
 
+  return(retur)
 }
 
-#getWeather()
+getWeather()
