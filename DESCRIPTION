@@ -1,13 +1,20 @@
-Package: Lab3AdvancedR
+Package: Lab5AdvancedR
 Type: Package
-Title: Euclidean and Dijkstra Algorithms
+Title: Interactive Shiny API-Gathered Data Analysis
 Version: 1.0
 Date: 2021-09-12
 Authors@R: c(
     person("Kristina", "Levina", email = "myemail@gmail.com", role = "cre"),
     person("Ingemar", "Sjostrom", email = "myemail@gmail.com", role = "aut"))
-Description: This package realises two algorithms: Euclidean and Dijkstra, in two functions: euclidean and dijkstra, respectively.
+Description: This package enables to analyse data gathered using an API with a Shiny application.
 License: file LICENSE
 RoxygenNote: 7.1.2
-Suggests: testthat
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
 Encoding: UTF-8
+VignetteBuilder: knitr
+Imports:
+    qpdf,
+    markdown

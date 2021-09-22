@@ -1,0 +1,48 @@
+---
+title: "Linear Regression Analysis Package"
+author: "Kristina Levina and Ingemar Sjostrom"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{linreg-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Lab5AdvancedR)
+```
+The package enables to obtain various outputs of the linear regression analysis from the input data. The user is expected to put ´formula´ and ´data´ as parameters to one of the following functions:
+
+1) The function below prints the coefficients of the linear regression analysis of the input data.
+```
+print1.linreg(formula, data)
+```
+2) The function below plots the fitted-value-dependence of the residuals and square root of standardised residuals obtained by the linear regression analysis of the input data.
+```
+plot.linreg(formula, data)
+```
+3) The function below outputs the coefficients of the linear regression analysis of the input data
+```
+coef.linreg(formula, data)
+```
+4) The function below outputs the residuals of the linear regression analysis of the input data
+```
+resid.linreg(formula, data)
+```
+5) The function below provides a short summary of the linear regression analysis of the input data
+```
+summary.linreg(formula, data)
+```
+6) The function below outputs the predicted values of the linear regression analysis of the input data
+```
+pred.linreg(formula, data)
+```
+
