@@ -17,4 +17,7 @@ Encoding: UTF-8
 VignetteBuilder: knitr
 Imports:
     qpdf,
-    markdown
+    markdown,
+    httr,
+    jsonlite
+
