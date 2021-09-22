@@ -1,5 +1,18 @@
 getWeather <- function(){
-  #The API 
+  #' API-retrived weather near Norrkoping
+  #'
+  #' @export getWeather
+  #' 
+  #' @param location The longitude and latitude of the weather retrieved.
+  #' @param parameters The weather parameters obtained.
+  #' @param CurrentDate The current date.
+  #'
+  #' @return The API that lets to retrieve information about weather near Norrkoping at longitude = 16 and at latitude = 58 at the current day.
+  #' @examples
+  #' getWeather()
+
+  
+ 
   #The used guide https://www.dataquest.io/blog/r-api-tutorial/
   
   library(httr)
