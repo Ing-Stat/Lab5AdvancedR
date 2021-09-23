@@ -33,7 +33,6 @@ getWeather <- function(lon, lat){
   
   #Create a data.frame for analysis. 24 entries (time steps: 00:00-23.00)
   variables <- data$timeSeries$parameters
-  cleaned_variables <-c()
   
   #print("Obtained variables:")
   #print(variables)
