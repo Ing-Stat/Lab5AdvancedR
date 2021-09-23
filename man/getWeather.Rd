@@ -4,21 +4,23 @@
 \alias{getWeather}
 \title{API-retrived weather near Norrkoping}
 \usage{
-getWeather()
+getWeather(lon, lat)
 }
 \arguments{
-\item{location}{The longitude and latitude of the weather retrieved.}
+\item{lon}{The longitude.}
 
-\item{parameters}{The weather parameters obtained.}
+\item{lat}{The latitude.}
+
+\item{VariablesDf}{A data.frame that contains all variables of interest at a given day at an interval of 1 h.}
 
 \item{CurrentDate}{The current date.}
 }
 \value{
-The API that lets to retrieve information about weather near Norrkoping at longitude = 16 and at latitude = 58 at the current day.
+The API that lets to retrieve information about weather near Norrkoping at longitude = {lon1, lon2, lo3, lo4} and at latitude = {lat1, lat2, lat3, lat4} at the current day.
 }
 \description{
 API-retrived weather near Norrkoping
 }
 \examples{
-getWeather()
+getWeather(16, 58)
 }
