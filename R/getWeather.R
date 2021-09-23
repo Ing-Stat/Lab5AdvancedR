@@ -74,11 +74,11 @@ getWeather <- function(lon, lat){
   humidity <- unlist(humidity)
   
   #Create the data.frame
-  VariablesDf <- cbind.data.frame("time" = times, "temperature/C" = temperature, "wind_direction/deg" = wind_direction, "wind_speed/m/s" = wind_speed, "visibility/km" = visibility, "pressure/hPa" = pressure, "humidity/%" = humidity)
+  VariablesDf <- cbind.data.frame("time" = times, "temperature" = temperature, "wind_direction" = wind_direction, "wind_speed" = wind_speed, "visibility" = visibility, "pressure" = pressure, "humidity" = humidity)
   #print(VariablesDf)
   
   retur <- list("status" = status, "date" = currentDate, "variables" = VariablesDf)
-  
+  #print(retur$variables$visibility)
   return(retur)
 }
 
