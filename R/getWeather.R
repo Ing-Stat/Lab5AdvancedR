@@ -25,14 +25,11 @@ getWeather <- function(lon, lat){
   #Server request:
   request <- httr::GET(paste0("https://opendata-download-metanalys.smhi.se/api/category/mesan1g/version/2/geotype/point/lon/",lon,"/lat/",lat,"/data.json"))
   
-  #print(request)
+  status <- request$status
+  #print(status)
   
   #Convert from raw unicode to .json to a list
   data <- jsonlite::fromJSON(rawToChar(request$content))
-  location <- c("longitude" = 16, "latitude" = 58)
-  
-  #print("The chosen location:")
-  #print(location)
   
   #Create a data.frame for analysis. 24 entries (time steps: 00:00-23.00)
   variables <- data$timeSeries$parameters
@@ -81,7 +78,7 @@ getWeather <- function(lon, lat){
   VariablesDf <- cbind.data.frame("time" = times, "temperature/C" = temperature, "wind_direction/deg" = wind_direction, "wind_speed/m/s" = wind_speed, "visibility/km" = visibility, "pressure/hPa" = pressure, "humidity/%" = humidity)
   #print(VariablesDf)
   
-  retur <- list("date" = currentDate, "variables" = VariablesDf)
+  retur <- list("status" = status, "date" = currentDate, "variables" = VariablesDf)
   
   return(retur)
 }
