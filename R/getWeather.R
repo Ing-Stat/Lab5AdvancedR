@@ -82,4 +82,4 @@ getWeather <- function(lon, lat){
   return(retur)
 }
 
-getWeather(16, 58)
+#getWeather(16, 58)
