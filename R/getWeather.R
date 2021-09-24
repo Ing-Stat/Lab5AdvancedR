@@ -35,6 +35,9 @@ getWeather <- function(lon, lat){
         message(cond)
         return(NA)
       },
+      error=function(cond = "Empty reply from server"){
+        return(request)
+      },
       warning=function(cond) {
         message(paste("URL caused a warning:", url))
         message("Here's the original warning message:")
