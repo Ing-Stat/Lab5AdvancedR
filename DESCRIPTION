@@ -6,7 +6,7 @@ Date: 2021-09-12
 Authors@R: c(
     person("Kristina", "Levina", email = "myemail@gmail.com", role = "cre"),
     person("Ingemar", "Sjostrom", email = "myemail@gmail.com", role = "aut"))
-Description: This package enables to analyse data gathered using an API with a Shiny application.
+Description: This package enables to interactively analyse data gathered using an API with a Shiny application.
 License: file LICENSE
 RoxygenNote: 7.1.2
 Suggests: 
@@ -16,8 +16,8 @@ Suggests:
 Encoding: UTF-8
 VignetteBuilder: knitr
 Imports:
-    qpdf,
     markdown,
     httr,
     jsonlite
-
+Depends:
+    R (>= 4.1.1)
