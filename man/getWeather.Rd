@@ -21,6 +21,3 @@ The API that lets to retrieve information about weather near Norrkoping at longi
 \description{
 API-retrived weather near Norrkoping
 }
-\examples{
-getWeather(16, 58)
-}

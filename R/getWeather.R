@@ -9,8 +9,7 @@ getWeather <- function(lon, lat){
   #' @param CurrentDate The current date.
   #'
   #' @return The API that lets to retrieve information about weather near Norrkoping at longitude = {lon1, lon2, lo3, lo4} and at latitude = {lat1, lat2, lat3, lat4} at the current day.
-  #' @examples
-  #' getWeather(16, 58)
+
   
   
   
@@ -28,6 +27,7 @@ getWeather <- function(lon, lat){
     request <- tryCatch(
       {
         request <- httr::GET(url)
+        print(request)
       },
       error=function(cond) {
         message(paste("URL does not seem to exist:", url, sep = " "))
