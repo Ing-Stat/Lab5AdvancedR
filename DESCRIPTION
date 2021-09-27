@@ -18,6 +18,8 @@ VignetteBuilder: knitr
 Imports:
     markdown,
     httr,
-    jsonlite
+    jsonlite,
+    shiny,
+    ggplot2
 Depends:
     R (>= 4.0.2)
