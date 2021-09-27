@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
+  
+  
+  
+  <style>
+#minmeny   {position: absolute; top: 120px; left: 50px; width: 150px; height: 130px; border: 1px red dotted;}
+#minsamman {position: absolute; top: 270px; left: 50px; width: 470px; height: 100px; border: 1px red dotted;}
+#mitthist  {position: absolute; top: 400px; left: 50px; width:  90%; height:  500px; border: 1px red dotted;}
+#mitthist2 {position: absolute; top: 320px; left: 80px; width:  90%; height:  500px; border: 1px black dotted; visibility: hidden;}
+#merinfo   {position: absolute; top: 200px; left: 350px; width:  150px; height:  20px;}
+
+#summary2 {position: absolute; top: 200px; left: 350px; width:  150px; height:  20px;}
+#vinkel   {position: absolute; top: 120px; left: 650px; width: 150px; height: 130px; border: 1px red dotted;}
+
+
+</style>
+  
+  
+  
+</head>
+
+
+
+<body>
+
+ 
+ 
+ 
+     <input type="text" id="summary2" />
+
+ 
+ 
+  
+
+  <p>
+    <label>Distribution type:</label><br />
+    <select name="dist">
+      <option value="norm">Normalfördelning</option>
+      <option value="unif">Uniform</option>
+      <option value="lnorm">Log-normal</option>
+      <option value="exp">Exponential</option>
+    </select>
+  </p>
+
+
+
+
+
+<div id="vinkel">
+    <p>
+    <label>Lon & lat:</label><br />
+    <select name="lonlat">
+      <option value="1">10 20</option>
+      <option value="2">13 45</option>
+      <option value="3">17 78</option>
+      <option value="4">19 42</option>
+    </select>
+  </p>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <p>
+
+    <label>Number of observations:</label><br />
+    <input type="number" name="antal" value="500" min="50" max="1000" />
+
+  </p>
+
+<!--  <h3>Summary of data:</h3> -->
+  <pre id="summary" class="shiny-text-output"></pre>
+  
+   <pre id="summary2" class="shiny-text-output"></pre>
+
+  
+
+<div id="mitthist">
+<!--  <h3>Plot of data:</h3> -->
+  <div id="plot" class="shiny-plot-output"
+       style="width: 100%; height: 100%"></div>
+</div>
+
+
+
+
+<div id="mitthist2">
+<!--  <h3>Plot of data:</h3> -->
+  <div id="plot2" class="shiny-plot-output"
+       style="width: 100%; height: 100%"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+  <h3>Head of data:</h3>
+  <div id="table" class="shiny-html-output"></div>
+-->
+
+</body>
+</html>
