@@ -2,7 +2,7 @@
 % Please edit documentation in R/getWeather.R
 \name{getWeather}
 \alias{getWeather}
-\title{API-retrieved weather near Norrkoping}
+\title{API-retrieved weather-data at four positions}
 \usage{
 getWeather(lon, lat)
 }
@@ -44,8 +44,8 @@ getWeather(lon, lat)
 \item{CurrentDate}{The current date.}
 }
 \value{
-The API that lets to retrieve information about weather near Norrkoping at longitude = {lon1, lon2, lo3, lo4} and at latitude = {lat1, lat2, lat3, lat4} at the current day.
+The API that lets to retrieve information about weather near Norrkoping at longitude = {lon1, lon2, lon3, lon4} and at latitude = {lat1, lat2, lat3, lat4} at the current day.
 }
 \description{
-API-retrieved weather near Norrkoping
+API-retrieved weather-data at four positions
 }
