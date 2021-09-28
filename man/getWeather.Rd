@@ -2,7 +2,7 @@
 % Please edit documentation in R/getWeather.R
 \name{getWeather}
 \alias{getWeather}
-\title{API-retrived weather near Norrkoping}
+\title{API-retrieved weather near Norrkoping}
 \usage{
 getWeather(lon, lat)
 }
@@ -10,6 +10,34 @@ getWeather(lon, lat)
 \item{lon}{The longitude.}
 
 \item{lat}{The latitude.}
+
+\item{url}{The processed url}
+
+\item{request}{The server response}
+
+\item{status}{The status of the server response}
+
+\item{data}{The returned data from the server}
+
+\item{variablesDf}{A data.frame with variables of interest}
+
+\item{times}{The retrieved times from the data}
+
+\item{temperature}{Temepatures}
+
+\item{wind_direction}{Wind directions}
+
+\item{wind_speed}{Wind speeds}
+
+\item{visibility}{Visibility}
+
+\item{pressure}{Pressures}
+
+\item{humidity}{Humidities}
+
+\item{currentDate}{The system current data}
+
+\item{retur}{The data.frame with objects required for analysis}
 
 \item{VariablesDf}{A data.frame that contains all variables of interest at a given day at an interval of 1 h.}
 
@@ -19,5 +47,5 @@ getWeather(lon, lat)
 The API that lets to retrieve information about weather near Norrkoping at longitude = {lon1, lon2, lo3, lo4} and at latitude = {lat1, lat2, lat3, lat4} at the current day.
 }
 \description{
-API-retrived weather near Norrkoping
+API-retrieved weather near Norrkoping
 }

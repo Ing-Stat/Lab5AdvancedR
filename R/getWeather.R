@@ -1,10 +1,24 @@
 getWeather <- function(lon, lat){
-  #' API-retrived weather near Norrkoping
+  #' API-retrieved weather near Norrkoping
   #'
   #' @export getWeather
   #' 
+  #' @param url The processed url
+  #' @param request The server response
+  #' @param status The status of the server response
+  #' @param data The returned data from the server
+  #' @param variablesDf A data.frame with variables of interest
   #' @param lon The longitude.
   #' @param lat The latitude.
+  #' @param times The retrieved times from the data
+  #' @param temperature Temepatures
+  #' @param wind_direction Wind directions
+  #' @param wind_speed Wind speeds
+  #' @param visibility Visibility
+  #' @param pressure Pressures
+  #' @param humidity Humidities
+  #' @param currentDate The system current data
+  #' @param retur The data.frame with objects required for analysis
   #' @param VariablesDf A data.frame that contains all variables of interest at a given day at an interval of 1 h.
   #' @param CurrentDate The current date.
   #'
@@ -26,7 +40,7 @@ getWeather <- function(lon, lat){
     request <- tryCatch(
       {
         request <- httr::GET(url)
-        print(request)
+        #print(request)
       },
       error=function(cond) {
         message(paste("URL does not seem to exist:", url, sep = " "))
