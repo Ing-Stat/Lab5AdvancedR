@@ -1,123 +1,159 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <script src="shared/jquery.js" type="text/javascript"></script>
-  <script src="shared/shiny.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
-  
-  
-  
-  <style>
-#minmeny   {position: absolute; top: 120px; left: 50px; width: 150px; height: 130px; border: 1px red dotted;}
-#minsamman {position: absolute; top: 270px; left: 50px; width: 470px; height: 100px; border: 1px red dotted;}
-#mitthist  {position: absolute; top: 400px; left: 50px; width:  90%; height:  500px; border: 1px red dotted;}
-#mitthist2 {position: absolute; top: 320px; left: 80px; width:  90%; height:  500px; border: 1px black dotted; visibility: hidden;}
-#merinfo   {position: absolute; top: 200px; left: 350px; width:  150px; height:  20px;}
-
-#summary2 {position: absolute; top: 200px; left: 350px; width:  150px; height:  20px;}
-#vinkel   {position: absolute; top: 120px; left: 650px; width: 150px; height: 130px; border: 1px red dotted;}
-
-
-</style>
-  
-  
-  
-</head>
-
-
-
-<body>
-
- 
- 
- 
-     <input type="text" id="summary2" />
-
- 
- 
-  
-
-  <p>
-    <label>Distribution type:</label><br />
-    <select name="dist">
-      <option value="norm">Normalfördelning</option>
-      <option value="unif">Uniform</option>
-      <option value="lnorm">Log-normal</option>
-      <option value="exp">Exponential</option>
-    </select>
-  </p>
-
-
-
-
-
-<div id="vinkel">
-    <p>
-    <label>Lon & lat:</label><br />
-    <select name="lonlat">
-      <option value="1">10 20</option>
-      <option value="2">13 45</option>
-      <option value="3">17 78</option>
-      <option value="4">19 42</option>
-    </select>
-  </p>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <p>
-
-    <label>Number of observations:</label><br />
-    <input type="number" name="antal" value="500" min="50" max="1000" />
-
-  </p>
-
-<!--  <h3>Summary of data:</h3> -->
-  <pre id="summary" class="shiny-text-output"></pre>
-  
-   <pre id="summary2" class="shiny-text-output"></pre>
-
-  
-
-<div id="mitthist">
-<!--  <h3>Plot of data:</h3> -->
-  <div id="plot" class="shiny-plot-output"
-       style="width: 100%; height: 100%"></div>
-</div>
-
-
-
-
-<div id="mitthist2">
-<!--  <h3>Plot of data:</h3> -->
-  <div id="plot2" class="shiny-plot-output"
-       style="width: 100%; height: 100%"></div>
-</div>
-
-
-
-
-
-
-
-
-
-<!--
-  <h3>Head of data:</h3>
-  <div id="table" class="shiny-html-output"></div>
--->
-
-</body>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/humanity/jquery-ui.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+ <link rel="stylesheet" href="http://www.ing-stat.se/ui/demos.css">
+
+ <style>
+ 
+#radioknappar {position: absolute; top: 140px; left: 215px; width: 255px; height: 190px;}
+
+#radio1       {position: absolute; top:  10px; left: 15px;}
+#radio2       {position: absolute; top:  30px; left: 15px;}
+#radio3       {position: absolute; top:  50px; left: 15px;}
+#radio4       {position: absolute; top:  70px; left: 15px;}
+#radio5       {position: absolute; top:  90px; left: 15px;}
+#radio6       {position: absolute; top: 110px; left: 15px;}
+
+#forradio1    {position: absolute; top:  13px; left: 40px; font-family: verdana, sans-serif; font-size: 14px; font-weight: bold}
+#forradio2    {position: absolute; top:  33px; left: 40px; font-family: verdana, sans-serif; font-size: 14px;}
+#forradio3    {position: absolute; top:  53px; left: 40px; font-family: verdana, sans-serif; font-size: 14px;}
+#forradio4    {position: absolute; top:  73px; left: 40px; font-family: verdana, sans-serif; font-size: 14px;}
+#forradio5    {position: absolute; top:  93px; left: 40px; font-family: verdana, sans-serif; font-size: 14px;}
+#forradio6    {position: absolute; top: 113px; left: 40px; font-family: verdana, sans-serif; font-size: 14px;}
+
+#minmeny   {position: absolute; top: 120px; left: 650px; width: 150px; height: 130px; border: 1px red dotted;}
+#mittDia1  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px red dotted;}
+#mittDia2  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px black dotted; visibility: hidden;}
+#mittDia3  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px black dotted; visibility: hidden;}
+#mittDia4  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px black dotted; visibility: hidden;}
+#mittDia5  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px black dotted; visibility: hidden;}
+#mittDia6  {position: absolute; top: 400px; left: 50px; width:   90%; height: 500px; border: 1px black dotted; visibility: hidden;}
+
+#merinfo   {position: absolute; top:  70px; left: 15px; width: 150px; height: 20px;}
+#vinkel   {position: absolute; top: 120px; left:  20px; width: 155px; height: 130px;}
+
+#alertruta {position: absolute; top: 140px; left: 460px; width: 380px; height: 150px; font-size: 16px; line-height: 25px; border: 1px red black; padding: 10px;}
+
+</style>
+
+
+<script type="text/javascript"> 
+$(document).ready(function() {
+
+alert("This application uses an API to access data from SMHI, the Swedish weather bureau. A number of diagrams are accessable for information for a certain geographical point.  The point is determined by input from a dropdown menu.");
+
+$("#merinfo").button();
+$("#merinfo").click(function() {alert("This application uses an API to access data from SMHI, the Swedish weather bureau. A number of diagrams are accessable for information for a certain geographical point. The point is determined by input from a dropdown menu.");});
+
+$("#radio1").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia1").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio1").css("font-weight", "bold");
+});
+
+$("#radio2").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia2").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio2").css("font-weight", "bold");
+});
+
+$("#radio3").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia3").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio3").css("font-weight", "bold");
+});
+
+$("#radio4").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia4").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio4").css("font-weight", "bold");
+});
+
+$("#radio5").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia5").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio5").css("font-weight", "bold");
+});
+
+$("#radio6").click(function() {
+   $(".minaDiagram").css("visibility", "hidden");  $("#mittDia6").css("visibility", "visible");
+   $(".diagramText").css("font-weight", "normal"); $("#forradio6").css("font-weight", "bold");
+});
+
+});
+</script>
+</head>
+<body>
+
+<div id="alertruta">This application collects data from SMHI via a API.<br />The data consists of six variables and is collected during the latest available 24 hours.<br />(There is a certain delay before the data is stored by SMHI.)<br /><br /> (SMHI is the Swedish institute for weather, water, climate, etc.)</div>
+
+
+<img id="LIU" style="position: absolute; left: 10px; top: 10px; border-radius: 5px" src="http://www.indstat.se/bilder/LIU.png" width="164" height="49" />
+<p style="position: absolute; left: 0px; top: -10px; text-align: center; width: 100%; font-size: 32px; font-weight: bold; font-family: Arial">Lab 5 &ndash; Advanced course in R, LiU</p>
+<button id="merinfo">More info...</button>
+
+<div id="radioknappar">
+  <p style="position: absolute; top: -30px; left: 20px; font-size: 16px; font-weight: bold; color: blue;">Different diagrams:</p>
+     <input type="radio" id="radio1" name="radio" checked="checked" /><label id="forradio1" class="diagramText"style="width: 143px;">Temperature</label>
+     <input type="radio" id="radio2" name="radio" />                  <label id="forradio2" class="diagramText">Wind direction</label>
+     <input type="radio" id="radio3" name="radio" />                  <label id="forradio3" class="diagramText">Wind speed</label>
+     <input type="radio" id="radio4" name="radio" />                  <label id="forradio4" class="diagramText">Visibility</label>
+     <input type="radio" id="radio5" name="radio" />                  <label id="forradio5" class="diagramText">Pressure</label>
+     <input type="radio" id="radio6" name="radio" />                  <label id="forradio6" class="diagramText">Humidity</label>
+</div>
+
+
+<div id="vinkel">
+   <p>
+   <label style=" font-size: 14px; font-weight: bold;">Longitude & latitude:</label><br />
+   <select name="lonlat" style="width: 140px; font-size: 14px;">
+     <option value="1">SW: 2.00 52.40</option>
+     <option value="2">SE: 27.74 52.43</option>
+     <option value="3">NE: 39.20 71.20</option>
+     <option value="4">NW: -9.66 71.14</option>
+   </select>
+ </p>
+ </div>
+
+<!--
+<div id="minmeny">
+ <p>
+   <label>Distribution type:</label><br />
+   <select name="dist">
+     <option value="norm">Normalfördelning</option>
+     <option value="unif">Uniform</option>
+     <option value="lnorm">Log-normal</option>
+     <option value="exp">Exponential</option>
+   </select>
+ </p>
+
+ <p>
+   <label>Number of observations:</label><br />
+   <input type="number" name="antal" value="500" min="50" max="1000" />
+ </p>
+</div>
+-->
+<!--
+<pre id="summary2" class="shiny-text-output"></pre>
+-->
+
+
+<div class="minaDiagram" id="mittDia1"><div id="plot1" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+<div class="minaDiagram" id="mittDia2"><div id="plot2" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+<div class="minaDiagram" id="mittDia3"><div id="plot3" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+<div class="minaDiagram" id="mittDia4"><div id="plot4" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+<div class="minaDiagram" id="mittDia5"><div id="plot5" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+<div class="minaDiagram" id="mittDia6"><div id="plot6" class="shiny-plot-output" style="width: 100%; height: 100%"></div></div>
+
+
+
+
+<!--
+ <h3>Head of data:</h3>
+ <div id="table" class="shiny-html-output"></div>
+-->
+
+</body>
 </html>

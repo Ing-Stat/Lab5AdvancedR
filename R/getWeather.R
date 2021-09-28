@@ -14,8 +14,7 @@ getWeather <- function(lon, lat){
   
   
   if(!is.numeric(lon) || !is.numeric(lat)){stop()}
-  #if((lon > 39.20) || (lon < -9.66)){stop()}
-  #if((lat > 71.2) || (lat < 52.40)){stop()}
+
   #The used guide https://www.dataquest.io/blog/r-api-tutorial/
   
   url <- paste0("https://opendata-download-metanalys.smhi.se/api/category/mesan1g/version/2/geotype/point/lon/",lon,"/lat/",lat,"/data.json")
